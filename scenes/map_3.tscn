@@ -15,9 +15,14 @@
 position = Vector2(0, -1)
 
 [node name="character" parent="." unique_id=1595101570 instance=ExtResource("8_0a7yh")]
+z_index = 1
 position = Vector2(69, 354)
 
 [node name="Camera2D" type="Camera2D" parent="character" unique_id=282569108]
+position = Vector2(-23, 0)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="city_scene" type="CanvasGroup" parent="." unique_id=519343472]
 

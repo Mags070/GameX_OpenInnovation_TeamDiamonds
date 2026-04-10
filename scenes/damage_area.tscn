@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://lk8r1cn33hsw"]
+
+[ext_resource type="Script" uid="uid://s0y4cv1gn2c6" path="res://scripts/damage_area.gd" id="1_5frsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bo7m"]
+size = Vector2(55.40897, 108.17941)
+
+[node name="DamageArea" type="Area2D" unique_id=453545474]
+collision_mask = 2
+monitoring = false
+script = ExtResource("1_5frsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=927080308]
+position = Vector2(0.50000024, 8.5)
+scale = Vector2(0.379, 0.379)
+shape = SubResource("RectangleShape2D_5bo7m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,13 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://c14p4g8lof0r2" path="res://assest/moss/Mossy - FloatingPlatforms.png" id="8_wqnuq"]
 [ext_resource type="Texture2D" uid="uid://bh0eth2dqq3m7" path="res://assest/moss/Mossy - BackgroundDecoration.png" id="9_08vx1"]
 [ext_resource type="Texture2D" uid="uid://cv60g2y56qsm7" path="res://assest/moss/Mossy - Hanging Plants.png" id="10_2vcri"]
+[ext_resource type="PackedScene" uid="uid://cne1g8hbgsyrp" path="res://scenes/test.tscn" id="11_08vx1"]
 [ext_resource type="Texture2D" uid="uid://dek4ku8g1u2c1" path="res://assest/moss/Mossy - TileSet.png" id="11_wqnuq"]
+[ext_resource type="PackedScene" uid="uid://ccoums28i16ni" path="res://scenes/wolf.tscn" id="12_08vx1"]
+[ext_resource type="Script" uid="uid://ddbwo6jfanm0o" path="res://scripts/wolf_boss.gd" id="13_v17nm"]
 [ext_resource type="Texture2D" uid="uid://bbq1bo5qgrfqs" path="res://assest/trees/trees.png" id="50_t3wnm"]
 [ext_resource type="Texture2D" uid="uid://1vea8qwguthp" path="res://assest/backgrounds/bg.png" id="55_45fjt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1ig8"]
 atlas = ExtResource("50_t3wnm")
 region = Rect2(178, 1, 104, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v17nm"]
+size = Vector2(34.5, 638.5)
 
 [node name="map1" type="Node2D" unique_id=436783667]
 
@@ -44,7 +50,7 @@ polygon = PackedVector2Array(605.33875, 1422.6472, 2100.0935, 1413.588, 2145.389
 visible = false
 position = Vector2(-2.4671407, 5.5121813)
 scale = Vector2(0.21995777, 0.21995778)
-polygon = PackedVector2Array(103, 2480, 595, 2459, 591, 2170, 1966, 2173, 2002, 2179, 2038, 2204, 2058, 2251, 2061, 2314, 2061, 2517, 3523, 2567, 3944, 2544, 4481, 2473, 4471, 2641, 5366, 2652, 5361, 2480, 7206, 2489, 7257, 2926, 828, 2947, 116, 2905)
+polygon = PackedVector2Array(103, 2480, 595, 2459, 591, 2170, 1966, 2173, 2002, 2179, 2038, 2204, 2058, 2251, 2061, 2314, 2061, 2517, 3523, 2567, 3944, 2544, 4481, 2473, 4471, 2641, 5366, 2652, 5361, 2480, 7358.081, 2489.0588, 7358.081, 2920.96, 828, 2947, 116, 2905)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="scene" unique_id=2030781783]
 visible = false
@@ -56,7 +62,7 @@ polygon = PackedVector2Array(9, 303, 5, 10, 5476, 16, 5485, 306, 5276, 334, 5296
 position = Vector2(-9.155727, -14.584246)
 scale = Vector2(0.22069716, 0.226054)
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(613.71906, 2483.1965, 628.58636, 2189.0256, 1403.6697, 2194.8315, 1843.7426, 2189.0256, 1989.4424, 2196.7668, 2024.3406, 2214.0566, 2055.8496, 2229.6675, 2072.6992, 2308.0486, 2075.6729, 2528.6768, 2365, 2532, 2803, 2559, 3098, 2568, 3399, 2572, 3534, 2572, 4473.277, 2489.0024, 4484.1797, 2668.9885, 5350.449, 2675.7622, 5352.4316, 2504.485, 7181.113, 2507.3882, 7201.927, 2931.2266, 122.10615, 2939.9355, 129.04422, 2493.8408)
+polygon = PackedVector2Array(613.71906, 2483.1965, 628.58636, 2189.0256, 1403.6697, 2194.8315, 1843.7426, 2189.0256, 1989.4424, 2196.7668, 2024.3406, 2214.0566, 2055.8496, 2229.6675, 2072.6992, 2308.0486, 2075.6729, 2528.6768, 2365, 2532, 2803, 2559, 3098, 2568, 3399, 2572, 3534, 2572, 4473.277, 2489.0024, 4484.1797, 2668.9885, 5350.449, 2675.7622, 5352.4316, 2504.485, 7368.2676, 2506.4111, 7377.3296, 2931.0884, 122.10615, 2939.9355, 129.04422, 2493.8408)
 
 [node name="bushes" type="CanvasGroup" parent="." unique_id=1835667351]
 
@@ -125,12 +131,15 @@ texture = ExtResource("2_7xies")
 
 [node name="character" parent="." unique_id=1595101570 instance=ExtResource("4_00lji")]
 z_index = 2
-position = Vector2(605, 511)
+position = Vector2(352, 240)
 
 [node name="Camera2D" type="Camera2D" parent="character" unique_id=905150467]
 visible = false
 position = Vector2(-20, -4)
 zoom = Vector2(3, 3)
+limit_left = 0
+limit_right = 1600
+limit_bottom = 1000
 
 [node name="tree" type="CanvasGroup" parent="." unique_id=583456209]
 scale = Vector2(19.436207, 19.436207)
@@ -282,8 +291,8 @@ region_rect = Rect2(-9, 1213, 1076, 1285)
 [node name="Bg" type="Sprite2D" parent="." unique_id=1593712806]
 z_index = -11
 texture_repeat = 2
-position = Vector2(793.2018, 329)
-scale = Vector2(0.49299893, 0.42735815)
+position = Vector2(809.2017, 329)
+scale = Vector2(0.5029989, 0.42735815)
 texture = ExtResource("55_45fjt")
 region_enabled = true
 region_rect = Rect2(0, 0, 3200, 1496)
@@ -548,3 +557,51 @@ scale = Vector2(0.1633858, 0.24277411)
 texture = ExtResource("9_08vx1")
 region_enabled = true
 region_rect = Rect2(-34, 2309, 478, 144)
+
+[node name="Node2D" parent="." unique_id=1772518398 instance=ExtResource("11_08vx1")]
+position = Vector2(72.99994, 417)
+scale = Vector2(0.25695488, 0.22490898)
+
+[node name="Node2D2" parent="." unique_id=285688465 instance=ExtResource("11_08vx1")]
+position = Vector2(23, 343)
+scale = Vector2(0.25695488, 0.22490898)
+
+[node name="wolves" type="CanvasGroup" parent="." unique_id=1139060284]
+
+[node name="wolf" parent="wolves" unique_id=288058280 instance=ExtResource("12_08vx1")]
+position = Vector2(827, 233)
+
+[node name="wolf2" parent="wolves" unique_id=306223632 instance=ExtResource("12_08vx1")]
+position = Vector2(746, 224)
+
+[node name="wolf3" parent="wolves" unique_id=1947278901 instance=ExtResource("12_08vx1")]
+position = Vector2(423, 270)
+
+[node name="wolf4" parent="wolves" unique_id=1773645105 instance=ExtResource("12_08vx1")]
+z_index = 1
+position = Vector2(376, 275)
+
+[node name="wolf5" parent="wolves" unique_id=1435196472 instance=ExtResource("12_08vx1")]
+position = Vector2(1399, 527)
+script = ExtResource("13_v17nm")
+
+[node name="border" type="StaticBody2D" parent="." unique_id=899853264]
+
+[node name="leftwall" type="StaticBody2D" parent="border" unique_id=993851170]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/leftwall" unique_id=1120888594]
+position = Vector2(-14.25, 331)
+shape = SubResource("RectangleShape2D_v17nm")
+
+[node name="rightwall" type="StaticBody2D" parent="border" unique_id=346084959]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/rightwall" unique_id=894918611]
+position = Vector2(1633, 330)
+shape = SubResource("RectangleShape2D_v17nm")
+
+[node name="top" type="StaticBody2D" parent="border" unique_id=789939122]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/top" unique_id=880095470]
+position = Vector2(1303, 26)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_v17nm")

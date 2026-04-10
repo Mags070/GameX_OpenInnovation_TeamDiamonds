@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ddv0as8a560nr"]
+
+[ext_resource type="Script" uid="uid://vi6sdfo4alo4" path="res://scripts/damage_zone.gd" id="1_ppofr"]
+
+[node name="DamageZone" type="Area2D" unique_id=1214332059]
+script = ExtResource("1_ppofr")
+
+[node name="Timer" type="Timer" parent="." unique_id=713260803]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

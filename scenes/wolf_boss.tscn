@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b35wmgo4mkpsn"]
+
+[ext_resource type="Script" uid="uid://ddbwo6jfanm0o" path="res://scripts/wolf_boss.gd" id="1_1d27m"]
+[ext_resource type="PackedScene" uid="uid://ddv0as8a560nr" path="res://scenes/damage_zone.tscn" id="6_x775k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ld3u"]
+size = Vector2(59, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw7ba"]
+size = Vector2(392, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at30y"]
+size = Vector2(57, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x775k"]
+size = Vector2(59, 39)
+
+[node name="Wolf_Boss" type="Node2D" unique_id=403583358]
+script = ExtResource("1_1d27m")
+
+[node name="DamageZone" parent="." unique_id=1214332059 instance=ExtResource("6_x775k")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1750836024]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_6ld3u")
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1431122337]
+position = Vector2(30, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1677307956]
+position = Vector2(-30, 0)
+
+[node name="DetectionZone" type="Area2D" parent="." unique_id=2140943222]
+light_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=3887748]
+position = Vector2(-16, -20)
+shape = SubResource("RectangleShape2D_tw7ba")
+
+[node name="DmgZone" parent="." unique_id=60661005 instance=ExtResource("6_x775k")]
+light_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DmgZone" unique_id=1119272217]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_at30y")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=2084622953]
+light_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=255067711]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_x775k")

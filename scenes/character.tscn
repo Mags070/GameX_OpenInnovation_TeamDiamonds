@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://m4htcx1l056p" path="res://assest/character/punch/hero/11.png" id="21_134u4"]
 [ext_resource type="Texture2D" uid="uid://bu0togudtpwqx" path="res://assest/character/punch/hero/12.png" id="22_1yaq5"]
 [ext_resource type="Texture2D" uid="uid://ddp3boigvbl4s" path="res://assest/character/punch/hero/13.png" id="23_jhupd"]
+[ext_resource type="Script" uid="uid://wxtryg2r63x0" path="res://scripts/punch_zone.gd" id="31_i0gp7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0dpix"]
 animations = [{
@@ -107,7 +108,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"punch",
-"speed": 10.0
+"speed": 35.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -139,6 +140,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agfs1"]
 size = Vector2(52, 54)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rpqn"]
+size = Vector2(19.375, 13.375)
+
 [node name="character" type="CharacterBody2D" unique_id=1595101570]
 script = ExtResource("1_rkhd4")
 
@@ -148,8 +152,19 @@ scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_0dpix")
 animation = &"punch"
 autoplay = "running"
-frame_progress = 0.81938064
+frame_progress = 0.26872805
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1664656017]
 position = Vector2(-33, 33)
 shape = SubResource("RectangleShape2D_agfs1")
+
+[node name="punch_zone" type="Area2D" parent="." unique_id=1225521838]
+visibility_layer = 2
+script = ExtResource("31_i0gp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="punch_zone" unique_id=820742317]
+position = Vector2(-7.6875, 23.3125)
+shape = SubResource("RectangleShape2D_8rpqn")
+
+[connection signal="body_entered" from="punch_zone" to="." method="_on_punch_zone_body_entered"]
+[connection signal="body_exited" from="punch_zone" to="." method="_on_punch_zone_body_exited"]
