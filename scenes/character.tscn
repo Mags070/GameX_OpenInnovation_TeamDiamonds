@@ -138,7 +138,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agfs1"]
-size = Vector2(52, 54)
+size = Vector2(32, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rpqn"]
 size = Vector2(19.375, 13.375)
@@ -155,7 +155,7 @@ autoplay = "running"
 frame_progress = 0.26872805
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1664656017]
-position = Vector2(-33, 33)
+position = Vector2(-33, 34)
 shape = SubResource("RectangleShape2D_agfs1")
 
 [node name="punch_zone" type="Area2D" parent="." unique_id=1225521838]

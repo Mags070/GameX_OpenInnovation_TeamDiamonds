@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d02enokt8tsej"]
+
+[ext_resource type="Texture2D" uid="uid://bhgpsc4b6stro" path="res://assest/map-2-lava/no_lava _platform.png" id="1_vv5sp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xe7r"]
+size = Vector2(766, 134)
+
+[node name="no_lava_platform" type="StaticBody2D" unique_id=385257451]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1953659481]
+z_index = 1
+texture = ExtResource("1_vv5sp")
+region_enabled = true
+region_rect = Rect2(1582, 248, 769, 138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=67420965]
+shape = SubResource("RectangleShape2D_0xe7r")

@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dek4ku8g1u2c1" path="res://assest/moss/Mossy - TileSet.png" id="11_wqnuq"]
 [ext_resource type="PackedScene" uid="uid://ccoums28i16ni" path="res://scenes/wolf.tscn" id="12_08vx1"]
 [ext_resource type="Script" uid="uid://ddbwo6jfanm0o" path="res://scripts/wolf_boss.gd" id="13_v17nm"]
+[ext_resource type="Script" uid="uid://rabqou43hws4" path="res://scripts/lvl_2_entry.gd" id="14_2kntv"]
+[ext_resource type="PackedScene" uid="uid://cjptjwg1xu6kl" path="res://scenes/chest.tscn" id="15_m3f5x"]
 [ext_resource type="Texture2D" uid="uid://bbq1bo5qgrfqs" path="res://assest/trees/trees.png" id="50_t3wnm"]
 [ext_resource type="Texture2D" uid="uid://1vea8qwguthp" path="res://assest/backgrounds/bg.png" id="55_45fjt"]
 
@@ -20,6 +22,9 @@ region = Rect2(178, 1, 104, 145)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v17nm"]
 size = Vector2(34.5, 638.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3f5x"]
+size = Vector2(110, 140)
 
 [node name="map1" type="Node2D" unique_id=436783667]
 
@@ -131,7 +136,7 @@ texture = ExtResource("2_7xies")
 
 [node name="character" parent="." unique_id=1595101570 instance=ExtResource("4_00lji")]
 z_index = 2
-position = Vector2(352, 240)
+position = Vector2(735, 506)
 
 [node name="Camera2D" type="Camera2D" parent="character" unique_id=905150467]
 visible = false
@@ -559,12 +564,12 @@ region_enabled = true
 region_rect = Rect2(-34, 2309, 478, 144)
 
 [node name="Node2D" parent="." unique_id=1772518398 instance=ExtResource("11_08vx1")]
-position = Vector2(72.99994, 417)
-scale = Vector2(0.25695488, 0.22490898)
+position = Vector2(50, 415)
+scale = Vector2(0.54407626, 0.33442408)
 
 [node name="Node2D2" parent="." unique_id=285688465 instance=ExtResource("11_08vx1")]
-position = Vector2(23, 343)
-scale = Vector2(0.25695488, 0.22490898)
+position = Vector2(4.000004, 340)
+scale = Vector2(0.6132724, 0.34701476)
 
 [node name="wolves" type="CanvasGroup" parent="." unique_id=1139060284]
 
@@ -584,6 +589,9 @@ position = Vector2(376, 275)
 [node name="wolf5" parent="wolves" unique_id=1435196472 instance=ExtResource("12_08vx1")]
 position = Vector2(1399, 527)
 script = ExtResource("13_v17nm")
+
+[node name="wolf6" parent="wolves" unique_id=1210094263 instance=ExtResource("12_08vx1")]
+position = Vector2(226, 448)
 
 [node name="border" type="StaticBody2D" parent="." unique_id=899853264]
 
@@ -605,3 +613,17 @@ shape = SubResource("RectangleShape2D_v17nm")
 position = Vector2(1303, 26)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_v17nm")
+
+[node name="lvl-2" type="Area2D" parent="." unique_id=1764057350]
+script = ExtResource("14_2kntv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl-2" unique_id=1681424523]
+position = Vector2(1638, 491)
+shape = SubResource("RectangleShape2D_m3f5x")
+
+[node name="chest" parent="." unique_id=956531542 instance=ExtResource("15_m3f5x")]
+position = Vector2(58, 548)
+
+[connection signal="body_entered" from="lvl-2" to="character" method="_on_lvl_2_body_entered"]
+[connection signal="body_entered" from="lvl-2" to="lvl-2" method="_on_body_entered"]
+[connection signal="body_exited" from="lvl-2" to="lvl-2" method="_on_body_exited"]

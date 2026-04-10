@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://obtuxx8dj4cu"]
+
+[ext_resource type="Texture2D" uid="uid://55vkmr1q0mno" path="res://assest/map-2-lava/lava_platform-Photoroom.png" id="1_auvdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m81gy"]
+size = Vector2(764, 136)
+
+[node name="Lava Platform" type="StaticBody2D" unique_id=1506414020]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=162798327]
+texture = ExtResource("1_auvdf")
+region_enabled = true
+region_rect = Rect2(1582, 248, 769, 139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339475276]
+z_index = -1
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_m81gy")

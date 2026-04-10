@@ -8,19 +8,34 @@
 [ext_resource type="Texture2D" uid="uid://d0ansqe7d2jrs" path="res://assest/city/city/6.png" id="6_jl3j3"]
 [ext_resource type="Texture2D" uid="uid://dcb5da7jct68p" path="res://assest/city/city/crane.png" id="7_0jfrf"]
 [ext_resource type="PackedScene" uid="uid://cnn7r56cfj8vo" path="res://scenes/character.tscn" id="8_0a7yh"]
+[ext_resource type="Script" uid="uid://bgvna74pfse10" path="res://scripts/path_2_1.gd" id="9_fwffn"]
+[ext_resource type="Script" uid="uid://dx24ole6cr502" path="res://scripts/lvl1_entry.gd" id="10_iqnx3"]
 
 [sub_resource type="Curve2D" id="Curve2D_0e48y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a7yh"]
+size = Vector2(33.25003, 2084.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqnx3"]
+size = Vector2(110, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwffn"]
+size = Vector2(23.25, 61.5)
 
 [node name="map-3" type="Node2D" unique_id=1540669857]
 position = Vector2(0, -1)
 
 [node name="character" parent="." unique_id=1595101570 instance=ExtResource("8_0a7yh")]
-z_index = 1
+z_index = 2
 position = Vector2(69, 354)
 
 [node name="Camera2D" type="Camera2D" parent="character" unique_id=282569108]
 position = Vector2(-23, 0)
 zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 60
+limit_right = 1310
+limit_bottom = 650
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
@@ -31,7 +46,8 @@ position = Vector2(289, 301)
 texture = ExtResource("1_0a7yh")
 
 [node name="buildinglayer8" type="Sprite2D" parent="city_scene/buildinglayer7" unique_id=546316151]
-position = Vector2(576, 0)
+position = Vector2(653.5, 0)
+scale = Vector2(1.2690972, 1)
 texture = ExtResource("1_0a7yh")
 flip_h = true
 
@@ -40,7 +56,8 @@ position = Vector2(289, 296)
 texture = ExtResource("2_fwffn")
 
 [node name="buildinglayer7" type="Sprite2D" parent="city_scene/buildinglayer6" unique_id=1523970256]
-position = Vector2(576, 0)
+position = Vector2(653.5, 0)
+scale = Vector2(1.2690972, 1)
 texture = ExtResource("2_fwffn")
 flip_h = true
 
@@ -49,7 +66,8 @@ position = Vector2(289, 304)
 texture = ExtResource("3_iqnx3")
 
 [node name="buildinglayer7" type="Sprite2D" parent="city_scene/buildinglayer5" unique_id=865169053]
-position = Vector2(576, 0)
+position = Vector2(653, 0)
+scale = Vector2(1.2673612, 1)
 texture = ExtResource("3_iqnx3")
 flip_h = true
 
@@ -58,7 +76,8 @@ position = Vector2(290, 306)
 texture = ExtResource("4_xn387")
 
 [node name="building layer4" type="Sprite2D" parent="city_scene/building layer4" unique_id=1197290343]
-position = Vector2(576, 0)
+position = Vector2(652.5, 35.500004)
+scale = Vector2(1.265625, 1.2191359)
 texture = ExtResource("4_xn387")
 flip_h = true
 
@@ -69,7 +88,8 @@ position = Vector2(290, 298)
 texture = ExtResource("5_an2rc")
 
 [node name="building layer3" type="Sprite2D" parent="city_scene/building layer2" unique_id=155490279]
-position = Vector2(576, 0)
+position = Vector2(654, 6.9999967)
+scale = Vector2(1.2690972, 0.9753086)
 texture = ExtResource("5_an2rc")
 flip_h = true
 
@@ -78,14 +98,10 @@ position = Vector2(290, 298)
 texture = ExtResource("6_jl3j3")
 
 [node name="Sprite2D2" type="Sprite2D" parent="city_scene/building layer1" unique_id=1087284380]
-position = Vector2(576, 0)
+position = Vector2(652.5, 0)
+scale = Vector2(1.265625, 1)
 texture = ExtResource("6_jl3j3")
 flip_h = true
-
-[node name="cranw" type="Sprite2D" parent="city_scene" unique_id=68014842]
-position = Vector2(931, 389)
-scale = Vector2(0.0679841, 0.06681287)
-texture = ExtResource("7_0jfrf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="city_scene" unique_id=1254148283]
 
@@ -98,10 +114,67 @@ curve = SubResource("Curve2D_0e48y")
 position = Vector2(576.6493, 477)
 scale = Vector2(0.38912648, 0.45779222)
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-1476.0002, -152.00002, -1390.0002, -152.00002, -1263.0002, -152.00002, -1068.0002, -152.00002, -819.00024, -152.00002, -819.00024, -59.00001, -735.0002, -59.00001, -646.0002, -59.00001, -562.0002, -59.00001, -368.00015, -59.00001, -368.00015, -153.00002, -264.00015, -153.00002, -141.00014, -153.00002, -16.000124, -153.00002, 118.99989, -153.00002, 231.99991, -153.00002, 231.99991, -40.000008, 231.99991, 122.00001, 299.9999, 122.00001, 299.9999, -33.000008, 299.9999, -131.00002, 367.9999, -131.00002, 367.9999, -58.00001, 367.9999, 34, 423.99994, 34, 423.99994, -45.000008, 423.99994, -139.00002, 423.99994, -209.00003, 429.99994, -209.00003, 429.99994, -249.00003, 467.99994, -249.00003, 467.99994, -198.00003, 467.99994, -157.00002, 467.99994, -100.00002, 467.99994, -59.00001, 467.99994, -11.000005, 467.99994, 39, 496.99994, 39, 496.99994, 2.9999967, 496.99994, -56.00001, 496.99994, -90.000015, 496.99994, -121.00002, 496.99994, -159.00002, 496.99994, -202.00003, 496.99994, -221.00003, 506.99994, -221.00003, 506.99994, -228.00003, 509.99994, -228.00003, 509.99994, -221.00003, 511.99994, -221.00003, 511.99994, -162.00002, 511.99994, -100.00002, 511.99994, 34, 584.99994, 34, 585, -130.02225, 584.99994, -141.00002, 584.99994, -180.00002, 613.99994, -180.00002, 613.99994, -96.00002, 613.99994, 34, 642.99994, 34, 642.99994, -153.00002, 815, -153.00002, 815, -89.000015, 856, -89.000015, 856, -157.00002, 975, -157.00002, 1172, -157.00002, 1341, -157.00002, 1476, -157.00002, 1476, 17.999998, 1476, 145.00002, 1476, 253.00003, 1476, 358.00003, 1476, 367.00003, 1171, 367.00003, 882, 367.00003, 670.99994, 367.00003, 380.9999, 367.00003, 153.9999, 367.00003, -131.00014, 367.00003, -367.00015, 367.00003, -552.0002, 367.00003, -775.00024, 367.00003, -961.00024, 367.00003, -1240.0002, 367.00003, -1476.0002, 367.00003, -1476.0002, 228.00003, -1476.0002, 127.00001, -1476.0002, 18.999998, -1476.0002, -49.00001, -1476.0002, -124.00002)
+polygon = PackedVector2Array(-1476.0002, -152.00002, -1390.0002, -152.00002, -1263.0002, -152.00002, -1068.0002, -152.00002, -819.00024, -152.00002, -819.00024, -59.00001, -735.0002, -59.00001, -646.0002, -59.00001, -562.0002, -59.00001, -368.00015, -59.00001, -368.00015, -153.00002, -264.00015, -153.00002, -141.00014, -153.00002, -16.000124, -153.00002, 118.99989, -153.00002, 231.99991, -153.00002, 231.99991, -40.000008, 231.99991, 122.00001, 299.9999, 122.00001, 299.9999, -33.000008, 299.9999, -131.00002, 367.9999, -131.00002, 367.9999, -58.00001, 367.9999, 34, 423.99994, 34, 423.99994, -45.000008, 423.99994, -139.00002, 423.99994, -209.00003, 429.99994, -209.00003, 429.99994, -249.00003, 467.99994, -249.00003, 467.99994, -198.00003, 467.99994, -157.00002, 467.99994, -100.00002, 467.99994, -59.00001, 467.99994, -11.000005, 467.99994, 39, 496.99994, 39, 496.99994, 2.9999967, 496.99994, -56.00001, 496.99994, -90.000015, 496.99994, -121.00002, 496.99994, -159.00002, 496.99994, -202.00003, 496.99994, -221.00003, 506.99994, -221.00003, 506.99994, -228.00003, 509.99994, -228.00003, 509.99994, -221.00003, 511.99994, -221.00003, 511.99994, -162.00002, 511.99994, -100.00002, 511.99994, 34, 584.99994, 34, 585, -130.02225, 584.99994, -141.00002, 584.99994, -180.00002, 613.99994, -180.00002, 613.99994, -96.00002, 613.99994, 34, 642.99994, 34, 642.99994, -153.00002, 815, -153.00002, 815, -89.000015, 856, -89.000015, 856, -157.00002, 975, -157.00002, 1172, -157.00002, 1341, -157.00002, 1735.556, -139.80133, 1735.556, 89.560425, 1727.8463, 242.46826, 1735.556, 362.6101, 1722.7067, 360.42566, 1730.4161, 369.16333, 1491.4193, 366.97888, 1476, 367.00003, 1171, 367.00003, 882, 367.00003, 670.99994, 367.00003, 380.9999, 367.00003, 153.9999, 367.00003, -131.00014, 367.00003, -367.00015, 367.00003, -552.0002, 367.00003, -775.00024, 367.00003, -961.00024, 367.00003, -1240.0002, 367.00003, -1476.0002, 367.00003, -1476.0002, 228.00003, -1476.0002, 127.00001, -1476.0002, 18.999998, -1476.0002, -49.00001, -1476.0002, -124.00002)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="city_scene/StaticBody2D" unique_id=1922064488]
-visible = false
+z_index = 1
 position = Vector2(576.01935, 477.00003)
 scale = Vector2(0.3895581, 0.45779228)
-polygon = PackedVector2Array(-1476, -149, -819, -149, -819, -59, -369, -59, -369, -153, 233, -153, 233, 123, 300, 123, 300, -131, 368, -131, 368, 35, 425, 35, 425, -209, 430, -209, 430, -249, 468, -249, 468, -149, 468, -42, 468, 39, 497, 39, 497, -101, 497, -221, 507, -221, 507, -228, 510, -228, 510, -221, 512, -221, 512, -55, 512, 34, 585, 34, 585, -180, 614, -180, 614, 34, 643, 34, 643, -153, 815, -153, 815, -89, 856, -89, 856, -157, 1154, -157, 1301, -157, 1406, -157, 1476, -157, 1476, -77, 1476, 2, 1476, 72, 1476, 153, 1476, 260, 1476, 367, 1316, 367, 1177, 367, 1040, 367, 886, 367, 712, 367, 547, 367, 324, 367, 75, 367, -186, 367, -342, 367, -570, 367, -829, 367, -1022, 367, -1317, 367, -1476, 367, -1476, 264, -1476, 22)
+polygon = PackedVector2Array(-1476, -149, -819, -149, -819, -59, -369, -59, -369, -153, 233, -153, 233, 123, 300, 123, 300, -131, 368, -131, 368, 35, 425, 35, 425, -209, 430, -209, 430, -249, 468, -249, 468, -149, 468, -42, 468, 39, 497, 39, 497, -101, 497, -221, 507, -221, 507, -228, 510, -228, 510, -221, 512, -221, 512, -55, 512, 34, 585, 34, 585, -180, 614, -180, 614, 34, 643, 34, 643, -153, 815, -153, 815, -89, 856, -89, 856, -157, 1154, -157, 1301, -157, 1406, -157, 1727.5487, -135.43268, 1730.1158, 54.609863, 1732.6827, 163.82971, 1724.9818, 242.4679, 1724.9818, 325.47498, 1724.9818, 364.7942, 1673.6415, 362.60974, 1476, 367, 1316, 367, 1177, 367, 1040, 367, 886, 367, 712, 367, 547, 367, 324, 367, 75, 367, -186, 367, -342, 367, -570, 367, -829, 367, -1022, 367, -1317, 367, -1476, 367, -1476, 264, -1476, 22)
+
+[node name="border" type="StaticBody2D" parent="." unique_id=894696341]
+
+[node name="leftwall" type="StaticBody2D" parent="border" unique_id=1943476562]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/leftwall" unique_id=884467081]
+position = Vector2(-14.25, 384.375)
+shape = SubResource("RectangleShape2D_0a7yh")
+
+[node name="rightwall" type="StaticBody2D" parent="border" unique_id=1664975980]
+
+[node name="top" type="StaticBody2D" parent="border" unique_id=478800064]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/top" unique_id=1778990936]
+position = Vector2(1028, 119)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_0a7yh")
+
+[node name="bottom" type="StaticBody2D" parent="border" unique_id=972568723]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/bottom" unique_id=202381972]
+position = Vector2(910, 667)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_0a7yh")
+
+[node name="crane" type="StaticBody2D" parent="." unique_id=499222303]
+
+[node name="cranw" type="Sprite2D" parent="crane" unique_id=68014842]
+position = Vector2(992, 392)
+scale = Vector2(0.09081539, 0.06681287)
+texture = ExtResource("7_0jfrf")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="crane" unique_id=1478200429]
+polygon = PackedVector2Array(733, 280, 764, 257, 899, 257, 1044, 257, 1063, 257, 1223, 257, 1225, 253, 1232, 252, 1236, 255, 1238, 258, 1245, 258, 1275, 278, 945, 279, 956, 304, 955, 315, 905, 316, 903, 278, 847, 283, 844, 287, 773, 284, 758, 285)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=563230709]
+color = Color(0.54901963, 0.28627452, 0.40784314, 1)
+polygon = PackedVector2Array(1251, 536, 1310, 539, 1308, 646, 1251, 645)
+
+[node name="path-2" type="Area2D" parent="." unique_id=1558648872]
+script = ExtResource("9_fwffn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="path-2" unique_id=13432690]
+position = Vector2(1307, 653.5)
+shape = SubResource("RectangleShape2D_iqnx3")
+
+[node name="path-3" type="Area2D" parent="." unique_id=1002790194]
+script = ExtResource("10_iqnx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="path-3" unique_id=1399334416]
+position = Vector2(1242, 388)
+shape = SubResource("RectangleShape2D_fwffn")
+
+[connection signal="body_entered" from="path-2" to="path-2" method="_on_body_entered"]
+[connection signal="body_exited" from="path-2" to="path-2" method="_on_body_exited"]
+[connection signal="body_entered" from="path-3" to="path-3" method="_on_body_entered"]
+[connection signal="body_exited" from="path-3" to="path-3" method="_on_body_exited"]
