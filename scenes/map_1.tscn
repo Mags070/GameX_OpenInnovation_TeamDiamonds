@@ -280,11 +280,10 @@ region_enabled = true
 region_rect = Rect2(-9, 1213, 1076, 1285)
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=1593712806]
-visible = false
 z_index = -11
 texture_repeat = 2
-position = Vector2(690.00006, 329)
-scale = Vector2(0.42849782, 0.42735815)
+position = Vector2(793.2018, 329)
+scale = Vector2(0.49299893, 0.42735815)
 texture = ExtResource("55_45fjt")
 region_enabled = true
 region_rect = Rect2(0, 0, 3200, 1496)
