@@ -24,3 +24,10 @@ res://scenes/villian.tscn
 res://scripts/villian.gd
 res://scripts/punch_zone.gd
 res://scripts/damage_zone.gd
+res://scenes/map_1_2.tscn
+res://scripts/path_follow_2d.gd
+res://scenes/map_3_2.tscn
+res://scripts/path2_2.gd
+res://scripts/path3_2.gd
+res://scripts/scene1.gd
+res://scenes/cutscene.tscn

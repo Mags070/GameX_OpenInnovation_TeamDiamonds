@@ -1,8 +1,12 @@
+res://scenes/
+res://assest/completed_cutscenes/
 res://scripts/
+res://assest/darkcity/Background layers/
+res://assest/trees/
+res://assest/
 res://assest/character/running/boss/
 res://assest/character/punch/boss/
 res://assest/character/jumo/boss/
-res://scenes/
 res://assest/cassette/
 res://assest/chest/
 res://assest/map-2-lava/
@@ -13,4 +17,3 @@ res://assest/character/running/hero/
 res://assest/city/city/
 res://assest/PlantsAnimated/Vegetation/Group Plant/
 res://shaders/
-res://assest/

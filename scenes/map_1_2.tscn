@@ -1,0 +1,662 @@
+[gd_scene format=3 uid="uid://wpv1uppjmc1l"]
+
+[ext_resource type="Texture2D" uid="uid://dcofpjrbafluq" path="res://assest/map_1.png" id="1_87ub3"]
+[ext_resource type="Texture2D" uid="uid://dkv22p4spwl4x" path="res://assest/Bushes.png" id="2_7xies"]
+[ext_resource type="PackedScene" uid="uid://cnn7r56cfj8vo" path="res://scenes/character.tscn" id="4_00lji"]
+[ext_resource type="Texture2D" uid="uid://dg2x33mjjr1sc" path="res://assest/trees/bone.png" id="6_v17nm"]
+[ext_resource type="Texture2D" uid="uid://itamfpkbhx6s" path="res://assest/cave.png" id="7_2kntv"]
+[ext_resource type="Texture2D" uid="uid://vxkple7wophe" path="res://assest/moss/Mossy - Decorations&Hazards.png" id="7_2vcri"]
+[ext_resource type="Texture2D" uid="uid://c14p4g8lof0r2" path="res://assest/moss/Mossy - FloatingPlatforms.png" id="8_wqnuq"]
+[ext_resource type="Texture2D" uid="uid://bh0eth2dqq3m7" path="res://assest/moss/Mossy - BackgroundDecoration.png" id="9_08vx1"]
+[ext_resource type="Texture2D" uid="uid://cv60g2y56qsm7" path="res://assest/moss/Mossy - Hanging Plants.png" id="10_2vcri"]
+[ext_resource type="Texture2D" uid="uid://8au2law153kw" path="res://assest/bg warm.png" id="10_gsbpi"]
+[ext_resource type="PackedScene" uid="uid://cne1g8hbgsyrp" path="res://scenes/test.tscn" id="11_08vx1"]
+[ext_resource type="Texture2D" uid="uid://dek4ku8g1u2c1" path="res://assest/moss/Mossy - TileSet.png" id="11_wqnuq"]
+[ext_resource type="AudioStream" uid="uid://d1ldv2t4is6gm" path="res://assest/audio track M-1.mp3" id="14_2kntv"]
+[ext_resource type="Script" uid="uid://by6p3mtroujbk" path="res://scripts/path2_2.gd" id="15_2akhv"]
+[ext_resource type="Texture2D" uid="uid://bbq1bo5qgrfqs" path="res://assest/trees/trees.png" id="50_t3wnm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1ig8"]
+atlas = ExtResource("50_t3wnm")
+region = Rect2(178, 1, 104, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1yt5"]
+size = Vector2(65, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ume6"]
+size = Vector2(34.5, 638.5)
+
+[node name="map1" type="Node2D" unique_id=436783667]
+
+[node name="scene" type="StaticBody2D" parent="." unique_id=463318852]
+z_index = 1
+
+[node name="map_layout" type="Sprite2D" parent="scene" unique_id=1953525197]
+position = Vector2(790.7734, 326)
+scale = Vector2(0.21984841, 0.2198484)
+texture = ExtResource("1_87ub3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="scene" unique_id=879056741]
+visible = false
+modulate = Color(0.95696706, 0.9538042, 0.9983427, 1)
+texture_filter = 1
+position = Vector2(-1, 9)
+scale = Vector2(0.21844654, 0.21844655)
+build_mode = 1
+polygon = PackedVector2Array(2533, 1873, 3178, 1937, 3652, 1936, 3662, 2027, 3653, 2134, 3625, 2234, 3581, 2367, 3556, 2527, 3555, 2564, 3961, 2541, 3959, 2162, 3975, 1609, 3971, 1348, 3964, 1311, 3940, 1266, 3900, 1229, 3835, 1198, 3723, 1166, 3495, 1175, 3244, 1168, 2877, 1128, 2654, 1098, 2607, 1110, 2566, 1135, 2534, 1174, 2544, 1251, 2590, 1523, 2589, 1684)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="scene" unique_id=811328810]
+visible = false
+position = Vector2(-7, -17)
+scale = Vector2(0.22077201, 0.220772)
+polygon = PackedVector2Array(605.33875, 1422.6472, 2100.0935, 1413.588, 2145.3892, 1413.588, 2222.3916, 1413.588, 2226.9211, 1640.066, 736.696, 1640.066, 596.2796, 1635.5365)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="scene" unique_id=1980364566]
+visible = false
+position = Vector2(-2.4671407, 5.5121813)
+scale = Vector2(0.21995777, 0.21995778)
+polygon = PackedVector2Array(103, 2480, 595, 2459, 591, 2170, 1966, 2173, 2002, 2179, 2038, 2204, 2058, 2251, 2061, 2314, 2061, 2517, 3523, 2567, 3944, 2544, 4481, 2473, 4471, 2641, 5366, 2652, 5361, 2480, 7206, 2489, 7257, 2926, 828, 2947, 116, 2905)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="scene" unique_id=2030781783]
+visible = false
+position = Vector2(-12.697162, 2.998394)
+scale = Vector2(0.2219328, 0.21686605)
+polygon = PackedVector2Array(9, 303, 5, 10, 5476, 16, 5485, 306, 5276, 334, 5296, 1575, 5262, 1647, 5170, 1674, 5106, 1677, 4975, 1715, 4772, 1751, 4650, 1741, 4631, 1678, 4717, 1039, 4717, 814, 4695, 554, 4640, 333, 3456, 309, 3422, 330, 3412, 344, 3411, 391, 3412, 452, 3377, 485, 3321, 499, 3234, 484, 3126, 443, 2977, 454, 2903, 451, 2839, 433, 2827, 379, 2785, 339, 2703, 307, 2105, 280, 1581, 270, 1016, 269, 234, 295)
+
+[node name="soil" type="Polygon2D" parent="scene" unique_id=50357877]
+position = Vector2(-9.155727, -14.584246)
+scale = Vector2(0.22069716, 0.226054)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(613.71906, 2483.1965, 628.58636, 2189.0256, 1403.6697, 2194.8315, 1843.7426, 2189.0256, 1989.4424, 2196.7668, 2024.3406, 2214.0566, 2055.8496, 2229.6675, 2072.6992, 2308.0486, 2075.6729, 2528.6768, 2365, 2532, 2803, 2559, 3098, 2568, 3399, 2572, 3534, 2572, 4473.277, 2489.0024, 4484.1797, 2668.9885, 5350.449, 2675.7622, 5352.4316, 2504.485, 7181.113, 2507.3882, 7201.927, 2931.2266, 122.10615, 2939.9355, 129.04422, 2493.8408)
+
+[node name="bushes" type="CanvasGroup" parent="." unique_id=1835667351]
+modulate = Color(0.8901961, 0.9254902, 0.11764706, 1)
+
+[node name="bushes" type="Sprite2D" parent="bushes" unique_id=827850006]
+modulate = Color(0.72156864, 0.43529412, 0.08235294, 1)
+position = Vector2(683.99994, 555)
+scale = Vector2(0.18962863, 0.18962863)
+texture = ExtResource("2_7xies")
+
+[node name="bushes2" type="Sprite2D" parent="bushes" unique_id=1371859423]
+modulate = Color(0.69803923, 0.4509804, 0.16862746, 1)
+position = Vector2(748, 549)
+rotation = -0.082030475
+scale = Vector2(0.20881714, 0.20881714)
+texture = ExtResource("2_7xies")
+
+[node name="bushes3" type="Sprite2D" parent="bushes" unique_id=1335803349]
+modulate = Color(0.95686275, 0.6, 0.22352941, 1)
+position = Vector2(789.00006, 458.00003)
+rotation = -2.3143065
+scale = Vector2(0.20190972, 0.25340322)
+texture = ExtResource("2_7xies")
+region_enabled = true
+region_rect = Rect2(129.14954, 0, 537.71765, 223.2222)
+
+[node name="bushes4" type="Sprite2D" parent="bushes" unique_id=2068676284]
+modulate = Color(0.43529412, 0.27058825, 0.08235294, 1)
+position = Vector2(679.78265, 449.2691)
+rotation = -2.9757862
+scale = Vector2(0.2969619, 0.35131502)
+texture = ExtResource("2_7xies")
+region_enabled = true
+region_rect = Rect2(129.14954, 0, 537.71765, 223.2222)
+
+[node name="bushes5" type="Sprite2D" parent="bushes" unique_id=2049564575]
+modulate = Color(0.9607843, 0.7019608, 0.54901963, 1)
+position = Vector2(775.99994, 532)
+rotation = 4.438372
+scale = Vector2(0.24660091, 0.2693252)
+skew = -0.05492413
+texture = ExtResource("2_7xies")
+region_enabled = true
+region_rect = Rect2(129.14954, 0, 537.71765, 223.2222)
+
+[node name="bushes6" type="Sprite2D" parent="bushes" unique_id=943862833]
+modulate = Color(0.9647059, 0.7647059, 0.41960785, 1)
+position = Vector2(706, 429)
+rotation = 3.5028758
+scale = Vector2(0.38264236, 0.48975873)
+skew = -0.05492413
+texture = ExtResource("2_7xies")
+region_enabled = true
+region_rect = Rect2(120, 0, 520, 216)
+
+[node name="bushes7" type="Sprite2D" parent="bushes" unique_id=579602843]
+modulate = Color(1, 1, 0.08627451, 1)
+position = Vector2(738, 557)
+scale = Vector2(0.1528638, 0.15286382)
+texture = ExtResource("2_7xies")
+
+[node name="bushes8" type="Sprite2D" parent="bushes" unique_id=775099936]
+modulate = Color(0.9490196, 0.68235296, 0.36078432, 1)
+position = Vector2(635, 554)
+scale = Vector2(0.1625387, 0.16253869)
+texture = ExtResource("2_7xies")
+
+[node name="character" parent="." unique_id=1595101570 instance=ExtResource("4_00lji")]
+z_index = 2
+position = Vector2(721, 497)
+
+[node name="Camera2D" type="Camera2D" parent="character" unique_id=309282700]
+visible = false
+position = Vector2(-20, -4)
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_right = 1600
+limit_bottom = 1000
+
+[node name="tree" type="CanvasGroup" parent="." unique_id=583456209]
+scale = Vector2(19.436207, 19.436207)
+
+[node name="tree" type="Sprite2D" parent="tree" unique_id=388064800]
+modulate = Color(0.6117647, 0.40392157, 0.28235295, 1)
+z_index = -1
+position = Vector2(30.973122, 25.622284)
+scale = Vector2(0.05061574, 0.05061574)
+texture = SubResource("AtlasTexture_r1ig8")
+
+[node name="tree2" type="Sprite2D" parent="tree" unique_id=1878891671]
+modulate = Color(0.42745098, 0.45490196, 0.1882353, 1)
+z_index = -1
+position = Vector2(34.060146, 25.725185)
+scale = Vector2(0.052187514, 0.0521875)
+texture = SubResource("AtlasTexture_r1ig8")
+
+[node name="tree4" type="Sprite2D" parent="tree" unique_id=918507461]
+modulate = Color(0.5254902, 0.28627452, 0.1882353, 1)
+z_index = -1
+position = Vector2(36.809017, 26.530077)
+scale = Vector2(0.058942642, 0.05894263)
+texture = SubResource("AtlasTexture_r1ig8")
+
+[node name="rock" type="CanvasGroup" parent="." unique_id=728450374]
+
+[node name="rock" type="Sprite2D" parent="rock" unique_id=1778600311]
+position = Vector2(152, 469.00003)
+scale = Vector2(0.0376151, 0.037615106)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(233, 192, 1283, 706)
+
+[node name="rock2" type="Sprite2D" parent="rock" unique_id=1716137826]
+position = Vector2(171.48311, 460.10446)
+scale = Vector2(0.046130005, 0.046130013)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(2893, 9, 1053, 915)
+
+[node name="rock3" type="Sprite2D" parent="rock" unique_id=1542105280]
+position = Vector2(200.00002, 469.00003)
+scale = Vector2(0.0376151, 0.037615106)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(233, 192, 1283, 706)
+
+[node name="rock4" type="Sprite2D" parent="rock" unique_id=822526742]
+position = Vector2(239.00002, 473.00003)
+scale = Vector2(0.0376151, 0.037615106)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(1604, 401, 1140, 512)
+
+[node name="rock5" type="Sprite2D" parent="rock" unique_id=310404403]
+position = Vector2(277.1301, 470.00006)
+scale = Vector2(0.0376151, 0.037615106)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(233, 192, 1283, 706)
+
+[node name="rock6" type="Sprite2D" parent="rock" unique_id=1246110796]
+position = Vector2(296.6132, 461.1045)
+scale = Vector2(0.046130005, 0.046130013)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(2893, 9, 1053, 915)
+
+[node name="rock7" type="Sprite2D" parent="rock" unique_id=724834692]
+position = Vector2(325.1301, 470.00006)
+scale = Vector2(0.0376151, 0.037615106)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(233, 192, 1283, 706)
+
+[node name="rock8" type="Sprite2D" parent="rock" unique_id=1963945765]
+position = Vector2(364.1301, 474.00006)
+scale = Vector2(0.0376151, 0.037615106)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(1604, 401, 1140, 512)
+
+[node name="rock9" type="Sprite2D" parent="rock" unique_id=1888867133]
+position = Vector2(378.1301, 469.27814)
+scale = Vector2(0.0376151, 0.037615106)
+texture = ExtResource("6_v17nm")
+region_enabled = true
+region_rect = Rect2(233, 192, 1283, 706)
+
+[node name="rock10" type="Sprite2D" parent="rock" unique_id=1204817335]
+position = Vector2(417.1301, 473.27814)
+scale = Vector2(0.0376151, 0.037615106)
+texture = ExtResource("6_v17nm")
+region_enabled = true
+region_rect = Rect2(1604, 401, 1140, 512)
+
+[node name="FinalCaveM1" type="Sprite2D" parent="rock/rock10" unique_id=316169798]
+modulate = Color(0.38431373, 0.32156864, 0.28235295, 1)
+position = Vector2(27080.076, -372.93866)
+scale = Vector2(6.260785, 5.915177)
+texture = ExtResource("7_2kntv")
+
+[node name="Bone" type="Sprite2D" parent="rock/rock10" unique_id=823410971]
+modulate = Color(1, 1, 0.93333334, 1)
+position = Vector2(27006.969, 923.083)
+scale = Vector2(0.97353107, 0.8377655)
+texture = ExtResource("6_v17nm")
+
+[node name="platforms" type="CanvasGroup" parent="." unique_id=837791932]
+
+[node name="moss-platform" type="Sprite2D" parent="platforms" unique_id=2008215239]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = 2
+position = Vector2(307, 325)
+scale = Vector2(0.22024989, 0.17722225)
+texture = ExtResource("8_wqnuq")
+region_enabled = true
+region_rect = Rect2(21, 1566, 2012, 450)
+
+[node name="moss-top" type="Sprite2D" parent="platforms" unique_id=1999586234]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = -1
+position = Vector2(315.54733, 55.63635)
+rotation = 1.5707964
+scale = Vector2(0.1633858, 0.1633858)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(17, 46, 1048, 4027)
+
+[node name="moss-top2" type="Sprite2D" parent="platforms" unique_id=1143206233]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+position = Vector2(914.9999, 62.000004)
+rotation = 1.5707964
+scale = Vector2(0.1633858, 0.1633858)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(17, 46, 1048, 4027)
+
+[node name="moss-top-1" type="Sprite2D" parent="platforms" unique_id=1184520530]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+position = Vector2(1090.0001, 377)
+rotation = 3.1415927
+scale = Vector2(0.12237763, 0.12237762)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(2675, 127, 1085, 1001)
+
+[node name="moss-top3" type="Sprite2D" parent="platforms" unique_id=875836096]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = -1
+position = Vector2(1071, 259.92435)
+rotation = 3.1415927
+scale = Vector2(0.1633858, 0.21006876)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(-9, 1213, 1076, 1285)
+
+[node name="moss-top4" type="Sprite2D" parent="platforms" unique_id=1066047967]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+position = Vector2(1124.0001, 230)
+scale = Vector2(0.1633858, 0.1976654)
+texture = ExtResource("7_2kntv")
+region_enabled = true
+region_rect = Rect2(-9, 1213, 1076, 1285)
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1593712806]
+z_index = -11
+position = Vector2(797, 323.54538)
+scale = Vector2(0.6219081, 0.38137224)
+texture = ExtResource("10_gsbpi")
+region_enabled = true
+region_rect = Rect2(0, 0, 2547, 1712)
+
+[node name="moss-top-layer" type="CanvasGroup" parent="." unique_id=1092074279]
+
+[node name="moss" type="Sprite2D" parent="moss-top-layer" unique_id=279342748]
+position = Vector2(618, 117.99999)
+scale = Vector2(0.100609794, 0.1006098)
+texture = ExtResource("10_2vcri")
+region_enabled = true
+region_rect = Rect2(89, 1400, 465, 1374)
+
+[node name="moss2" type="Sprite2D" parent="moss-top-layer" unique_id=1179395029]
+z_index = -1
+position = Vector2(658, 93.99999)
+scale = Vector2(0.100609794, 0.1006098)
+texture = ExtResource("10_2vcri")
+region_enabled = true
+region_rect = Rect2(89, 1400, 465, 1374)
+
+[node name="moss3" type="Sprite2D" parent="moss-top-layer" unique_id=1505923150]
+position = Vector2(675, 127.99999)
+scale = Vector2(0.100609794, 0.1006098)
+texture = ExtResource("10_2vcri")
+region_enabled = true
+region_rect = Rect2(89, 1400, 465, 1374)
+
+[node name="moss4" type="Sprite2D" parent="moss-top-layer" unique_id=1311083118]
+z_index = -1
+position = Vector2(698, 115.99999)
+scale = Vector2(0.100609794, 0.1006098)
+texture = ExtResource("10_2vcri")
+region_enabled = true
+region_rect = Rect2(89, 1400, 465, 1374)
+
+[node name="moss5" type="Sprite2D" parent="moss-top-layer" unique_id=906929209]
+position = Vector2(716, 124.99999)
+scale = Vector2(0.100609794, 0.1006098)
+texture = ExtResource("10_2vcri")
+region_enabled = true
+region_rect = Rect2(89, 1400, 465, 1374)
+
+[node name="moss6" type="Sprite2D" parent="moss-top-layer" unique_id=64409016]
+position = Vector2(737, 134)
+scale = Vector2(0.100609794, 0.1006098)
+texture = ExtResource("10_2vcri")
+region_enabled = true
+region_rect = Rect2(89, 1400, 465, 1374)
+
+[node name="moss7" type="Sprite2D" parent="moss-top-layer" unique_id=1328788006]
+z_index = -1
+position = Vector2(638, 108)
+scale = Vector2(0.100609794, 0.1006098)
+texture = ExtResource("10_2vcri")
+region_enabled = true
+region_rect = Rect2(89, 1400, 465, 1374)
+
+[node name="moss-viens" type="Sprite2D" parent="moss-top-layer" unique_id=897329090]
+visible = false
+position = Vector2(1000.99994, 105)
+rotation = 0.8237954
+scale = Vector2(0.0816291, 0.081629105)
+texture = ExtResource("7_2vcri")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(2066, 972, 1225, 808)
+
+[node name="moss-viens2" type="Sprite2D" parent="moss-top-layer" unique_id=168672734]
+modulate = Color(0.9882353, 0.9490196, 0.2627451, 1)
+position = Vector2(921, 91.99999)
+rotation = 3.234095
+scale = Vector2(0.0816291, 0.081629105)
+texture = ExtResource("7_2vcri")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(2066, 972, 1225, 808)
+
+[node name="moss-viens3" type="Sprite2D" parent="moss-top-layer" unique_id=1699313227]
+modulate = Color(0.9882353, 0.9490196, 0.2627451, 1)
+position = Vector2(844.99994, 116.99999)
+rotation = 0.65100783
+scale = Vector2(0.0816291, 0.081629105)
+texture = ExtResource("7_2vcri")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(2066, 972, 1225, 808)
+
+[node name="moss-viens4" type="Sprite2D" parent="moss-top-layer" unique_id=1493228387]
+visible = false
+position = Vector2(762, 95.99998)
+rotation = 0.65100783
+scale = Vector2(0.0816291, 0.081629105)
+texture = ExtResource("7_2vcri")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(2066, 972, 1225, 808)
+
+[node name="moss-viens5" type="Sprite2D" parent="moss-top-layer" unique_id=1548185679]
+visible = false
+modulate = Color(0.8352941, 0.7529412, 0.36078432, 1)
+z_index = -1
+position = Vector2(572.7563, 89.531395)
+rotation = 0.8237954
+scale = Vector2(0.0816291, 0.081629105)
+texture = ExtResource("7_2vcri")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(2066, 972, 1225, 808)
+
+[node name="moss-viens6" type="Sprite2D" parent="moss-top-layer" unique_id=2097783927]
+visible = false
+modulate = Color(0.7372549, 0.627451, 0, 1)
+z_index = -1
+position = Vector2(492.75635, 76.531364)
+rotation = 3.234095
+scale = Vector2(0.0816291, 0.081629105)
+texture = ExtResource("7_2vcri")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(2066, 972, 1225, 808)
+
+[node name="moss-viens7" type="Sprite2D" parent="moss-top-layer" unique_id=842681418]
+z_index = -1
+position = Vector2(416.7563, 101.531364)
+rotation = 0.65100783
+scale = Vector2(0.0816291, 0.081629105)
+texture = ExtResource("7_2vcri")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(2066, 972, 1225, 808)
+
+[node name="moss-viens8" type="Sprite2D" parent="moss-top-layer" unique_id=1678883281]
+z_index = -1
+position = Vector2(333.75635, 80.53135)
+rotation = 0.65100783
+scale = Vector2(0.0816291, 0.081629105)
+texture = ExtResource("7_2vcri")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(2066, 972, 1225, 808)
+
+[node name="climbing_assest" type="CanvasGroup" parent="." unique_id=961538261]
+
+[node name="tree3" type="Sprite2D" parent="climbing_assest" unique_id=1730464630]
+modulate = Color(0.14740407, 0.28689215, 0.18951884, 1)
+z_index = 1
+position = Vector2(-726, 94)
+scale = Vector2(3.626505, 3.6265042)
+texture = SubResource("AtlasTexture_r1ig8")
+region_enabled = true
+region_rect = Rect2(0, 10, 104, 127)
+
+[node name="vein" type="Sprite2D" parent="climbing_assest" unique_id=1502611137]
+modulate = Color(0.7921569, 0.6, 0.15686275, 1)
+z_index = -2
+position = Vector2(54.000004, 331.00003)
+rotation = 3.1415927
+scale = Vector2(0.29577464, 0.33922338)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(2608, 2564, 426, 1473)
+
+[node name="vein2" type="Sprite2D" parent="climbing_assest" unique_id=1130035918]
+z_index = 1
+position = Vector2(-525, 187.00005)
+scale = Vector2(0.29577464, 0.29577464)
+texture = ExtResource("7_2vcri")
+region_enabled = true
+region_rect = Rect2(2608, 2564, 426, 787)
+
+[node name="bottom" type="CanvasGroup" parent="." unique_id=660268944]
+
+[node name="moss-bottom" type="Sprite2D" parent="bottom" unique_id=1224451558]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = 1
+position = Vector2(922.0001, 555.00006)
+rotation = 1.5620697
+scale = Vector2(0.1633858, 0.24277411)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(-34, 2309, 478, 455)
+
+[node name="moss-bottom2" type="Sprite2D" parent="bottom" unique_id=1941305116]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = -1
+position = Vector2(1301, 556)
+rotation = 1.5620697
+scale = Vector2(0.1633858, 0.21006876)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(-34, 1213, 478, 1258)
+
+[node name="moss-bottom3" type="Sprite2D" parent="bottom" unique_id=677099843]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = -1
+position = Vector2(1453.9607, 552.02655)
+rotation = 1.5620697
+scale = Vector2(0.1633858, 0.20523667)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(-34, 1213, 478, 1258)
+
+[node name="covering-mid" type="CanvasGroup" parent="." unique_id=119246473]
+
+[node name="mid-part" type="Sprite2D" parent="covering-mid" unique_id=2024057129]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = 2
+position = Vector2(647, 260)
+scale = Vector2(0.17195284, 0.14136656)
+texture = ExtResource("11_wqnuq")
+region_enabled = true
+region_rect = Rect2(1045, 2014, 1024, 357)
+
+[node name="mid-part2" type="Sprite2D" parent="covering-mid" unique_id=248721534]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = 2
+position = Vector2(778.99994, 259)
+scale = Vector2(0.16800773, 0.14136656)
+texture = ExtResource("11_wqnuq")
+region_enabled = true
+region_rect = Rect2(1045, 2014, 789, 357)
+
+[node name="mid-part3" type="Sprite2D" parent="covering-mid" unique_id=1505824394]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = 2
+position = Vector2(854, 267.00003)
+rotation = 0.7853982
+scale = Vector2(0.11551073, 0.16675113)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(1336, 2610, 705, 311)
+
+[node name="mid-part4" type="Sprite2D" parent="covering-mid" unique_id=2047591305]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = 1
+position = Vector2(866, 374)
+rotation = 1.5707964
+scale = Vector2(0.17195284, 0.14136656)
+texture = ExtResource("11_wqnuq")
+region_enabled = true
+region_rect = Rect2(1045, 2014, 1024, 357)
+
+[node name="mid-part5" type="Sprite2D" parent="covering-mid" unique_id=1448355208]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = 1
+position = Vector2(866, 494.75818)
+rotation = 1.5707964
+scale = Vector2(0.1667894, 0.14136656)
+texture = ExtResource("11_wqnuq")
+region_enabled = true
+region_rect = Rect2(1045, 2014, 481, 357)
+
+[node name="covering-bottom" type="CanvasGroup" parent="." unique_id=958318072]
+
+[node name="mid-part3" type="Sprite2D" parent="covering-bottom" unique_id=310103783]
+modulate = Color(0.6745098, 0.7176471, 0.44705883, 1)
+z_index = 1
+position = Vector2(431.99997, 492.99997)
+rotation = 0.7853982
+scale = Vector2(0.11551073, 0.16675113)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(1336, 2610, 705, 311)
+
+[node name="moss-bottom" type="Sprite2D" parent="covering-bottom" unique_id=113930238]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+z_index = 1
+position = Vector2(503.00006, 568.00006)
+rotation = 1.5620697
+scale = Vector2(0.1633858, 0.24277411)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(-34, 2309, 478, 455)
+
+[node name="moss-bottom2" type="Sprite2D" parent="covering-bottom" unique_id=672921330]
+z_index = 1
+position = Vector2(438, 541)
+rotation = 3.1415927
+scale = Vector2(0.1633858, 0.24277411)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(-34, 2309, 478, 144)
+
+[node name="MossyBackgroundDecoration" type="Sprite2D" parent="covering-bottom" unique_id=1628247175]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+position = Vector2(1390, 538)
+scale = Vector2(0.06722236, 0.04046386)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(2384, 1410, 1682, 910)
+
+[node name="Node2D" parent="." unique_id=1772518398 instance=ExtResource("11_08vx1")]
+position = Vector2(72.99994, 417)
+scale = Vector2(0.25695488, 0.22490898)
+
+[node name="Node2D2" parent="." unique_id=285688465 instance=ExtResource("11_08vx1")]
+position = Vector2(23, 343)
+scale = Vector2(0.25695488, 0.22490898)
+
+[node name="MossyBackgroundDecoration" type="Sprite2D" parent="." unique_id=1003463695]
+modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+position = Vector2(1464, 539)
+scale = Vector2(0.055143524, 0.06539184)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(1215, 2610, 922, 644)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1969274032]
+stream = ExtResource("14_2kntv")
+autoplay = true
+
+[node name="lvl-2" type="Area2D" parent="." unique_id=156965975]
+position = Vector2(-58, -3)
+script = ExtResource("15_2akhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl-2" unique_id=2002886106]
+position = Vector2(1613, 514)
+shape = SubResource("RectangleShape2D_n1yt5")
+
+[node name="border" type="StaticBody2D" parent="." unique_id=1133503642]
+position = Vector2(-14, -3)
+
+[node name="leftwall" type="StaticBody2D" parent="border" unique_id=1681066501]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/leftwall" unique_id=1866006193]
+position = Vector2(-14.25, 331)
+shape = SubResource("RectangleShape2D_7ume6")
+
+[node name="rightwall" type="StaticBody2D" parent="border" unique_id=196471715]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/rightwall" unique_id=2066290597]
+position = Vector2(1633, 330)
+shape = SubResource("RectangleShape2D_7ume6")
+
+[node name="top" type="StaticBody2D" parent="border" unique_id=1623293517]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/top" unique_id=823383965]
+position = Vector2(1303, 26)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_7ume6")
+
+[connection signal="body_entered" from="lvl-2" to="lvl-2" method="_on_body_entered"]
+[connection signal="body_exited" from="lvl-2" to="lvl-2" method="_on_body_exited"]
