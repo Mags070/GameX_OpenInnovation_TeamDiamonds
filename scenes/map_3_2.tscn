@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bjh7kp5n84rxh" path="res://assest/darkcity/Background layers/5.png" id="6_xn387"]
 [ext_resource type="Texture2D" uid="uid://dcb5da7jct68p" path="res://assest/city/city/crane.png" id="7_0jfrf"]
 [ext_resource type="PackedScene" uid="uid://cnn7r56cfj8vo" path="res://scenes/character.tscn" id="8_0a7yh"]
-[ext_resource type="VideoStream" uid="uid://cw6o5s7wbtyba" path="res://assest/completed_cutscenes/Cutscene_2.ogv" id="8_0aclo"]
-[ext_resource type="Script" uid="uid://bvkvrykwy4201" path="res://scripts/scene3.gd" id="9_83dkd"]
 
 [sub_resource type="Curve2D" id="Curve2D_0e48y"]
 
@@ -131,18 +129,18 @@ position = Vector2(910, 667)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_xx7hd")
 
+[node name="leftwall2" type="StaticBody2D" parent="border" unique_id=547370971]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/leftwall2" unique_id=103938995]
+position = Vector2(1173, 414)
+shape = SubResource("RectangleShape2D_xx7hd")
+
 [node name="path-3" type="Area2D" parent="." unique_id=713402403]
 position = Vector2(-70, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="path-3" unique_id=237889738]
 position = Vector2(1198, 380)
 shape = SubResource("RectangleShape2D_6nejc")
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1527768955]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = ExtResource("8_0aclo")
-script = ExtResource("9_83dkd")
 
 [connection signal="body_entered" from="path-3" to="path-3" method="_on_body_entered"]
 [connection signal="body_exited" from="path-3" to="path-3" method="_on_body_exited"]

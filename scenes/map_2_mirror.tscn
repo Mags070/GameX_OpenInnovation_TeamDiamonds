@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cnn7r56cfj8vo" path="res://scenes/character.tscn" id="9_w4f6j"]
 [ext_resource type="PackedScene" path="res://scenes/lava_platform.tscn" id="10_fm323"]
 [ext_resource type="Script" uid="uid://bieho1opxbj6h" path="res://scripts/path3_2.gd" id="11_gw5ou"]
+[ext_resource type="Texture2D" uid="uid://bfo1exm00v5q4" path="res://assest/ring.png" id="12_xqun8"]
 
 [sub_resource type="Curve2D" id="Curve2D_gcma1"]
 bake_interval = 8.65
@@ -166,7 +167,7 @@ polygon = PackedVector2Array(1334, 600, 1347, 600, 1388, 600, 1428, 600, 1431, 6
 
 [node name="Nether" type="Sprite2D" parent="." unique_id=1608575191]
 z_index = -2
-position = Vector2(1029.0001, 379)
+position = Vector2(1015.0001, 373)
 scale = Vector2(2.2996116, 0.69325876)
 texture = ExtResource("6_itdr7")
 
@@ -186,6 +187,7 @@ curve = SubResource("Curve2D_gcma1")
 position = Vector2(190, 602)
 rotation = -0.06367221
 script = ExtResource("7_jn0jg")
+speed = 200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D" unique_id=246450724]
 z_index = 2
@@ -248,6 +250,11 @@ script = ExtResource("11_gw5ou")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lvl-3" unique_id=793641491]
 position = Vector2(2071, -18)
 shape = SubResource("RectangleShape2D_xqun8")
+
+[node name="Ring" type="Sprite2D" parent="." unique_id=1735415534]
+position = Vector2(1735.0001, 613.00006)
+scale = Vector2(0.012674317, 0.012674312)
+texture = ExtResource("12_xqun8")
 
 [connection signal="body_entered" from="lvl-3" to="lvl-3" method="_on_body_entered"]
 [connection signal="body_exited" from="lvl-3" to="lvl-3" method="_on_body_exited"]

@@ -258,7 +258,7 @@ texture = ExtResource("6_v17nm")
 [node name="platforms" type="CanvasGroup" parent="." unique_id=837791932]
 
 [node name="moss-platform" type="Sprite2D" parent="platforms" unique_id=2008215239]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(0.8509804, 0.34901962, 0.08235294, 1)
 z_index = 2
 position = Vector2(307, 325)
 scale = Vector2(0.22024989, 0.17722225)
@@ -314,7 +314,7 @@ region_rect = Rect2(-9, 1213, 1076, 1285)
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=1593712806]
 z_index = -11
-position = Vector2(797, 323.54538)
+position = Vector2(797, 328.00003)
 scale = Vector2(0.6219081, 0.38137224)
 texture = ExtResource("10_gsbpi")
 region_enabled = true
@@ -323,6 +323,7 @@ region_rect = Rect2(0, 0, 2547, 1712)
 [node name="moss-top-layer" type="CanvasGroup" parent="." unique_id=1092074279]
 
 [node name="moss" type="Sprite2D" parent="moss-top-layer" unique_id=279342748]
+modulate = Color(1, 0.42745098, 0.2784314, 1)
 position = Vector2(618, 117.99999)
 scale = Vector2(0.100609794, 0.1006098)
 texture = ExtResource("10_2vcri")
@@ -330,6 +331,7 @@ region_enabled = true
 region_rect = Rect2(89, 1400, 465, 1374)
 
 [node name="moss2" type="Sprite2D" parent="moss-top-layer" unique_id=1179395029]
+modulate = Color(1, 0.42745098, 0.2784314, 1)
 z_index = -1
 position = Vector2(658, 93.99999)
 scale = Vector2(0.100609794, 0.1006098)
@@ -338,6 +340,7 @@ region_enabled = true
 region_rect = Rect2(89, 1400, 465, 1374)
 
 [node name="moss3" type="Sprite2D" parent="moss-top-layer" unique_id=1505923150]
+modulate = Color(1, 0.42745098, 0.2784314, 1)
 position = Vector2(675, 127.99999)
 scale = Vector2(0.100609794, 0.1006098)
 texture = ExtResource("10_2vcri")
@@ -345,6 +348,7 @@ region_enabled = true
 region_rect = Rect2(89, 1400, 465, 1374)
 
 [node name="moss4" type="Sprite2D" parent="moss-top-layer" unique_id=1311083118]
+modulate = Color(1, 0.42745098, 0.2784314, 1)
 z_index = -1
 position = Vector2(698, 115.99999)
 scale = Vector2(0.100609794, 0.1006098)
@@ -353,6 +357,7 @@ region_enabled = true
 region_rect = Rect2(89, 1400, 465, 1374)
 
 [node name="moss5" type="Sprite2D" parent="moss-top-layer" unique_id=906929209]
+modulate = Color(1, 0.42745098, 0.2784314, 1)
 position = Vector2(716, 124.99999)
 scale = Vector2(0.100609794, 0.1006098)
 texture = ExtResource("10_2vcri")
@@ -360,6 +365,7 @@ region_enabled = true
 region_rect = Rect2(89, 1400, 465, 1374)
 
 [node name="moss6" type="Sprite2D" parent="moss-top-layer" unique_id=64409016]
+modulate = Color(1, 0.42745098, 0.2784314, 1)
 position = Vector2(737, 134)
 scale = Vector2(0.100609794, 0.1006098)
 texture = ExtResource("10_2vcri")
@@ -367,6 +373,7 @@ region_enabled = true
 region_rect = Rect2(89, 1400, 465, 1374)
 
 [node name="moss7" type="Sprite2D" parent="moss-top-layer" unique_id=1328788006]
+modulate = Color(1, 0.42745098, 0.2784314, 1)
 z_index = -1
 position = Vector2(638, 108)
 scale = Vector2(0.100609794, 0.1006098)
@@ -490,7 +497,7 @@ region_rect = Rect2(2608, 2564, 426, 787)
 [node name="bottom" type="CanvasGroup" parent="." unique_id=660268944]
 
 [node name="moss-bottom" type="Sprite2D" parent="bottom" unique_id=1224451558]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.39607844, 0.13333334, 1)
 z_index = 1
 position = Vector2(922.0001, 555.00006)
 rotation = 1.5620697
@@ -500,7 +507,7 @@ region_enabled = true
 region_rect = Rect2(-34, 2309, 478, 455)
 
 [node name="moss-bottom2" type="Sprite2D" parent="bottom" unique_id=1941305116]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.39607844, 0.13333334, 1)
 z_index = -1
 position = Vector2(1301, 556)
 rotation = 1.5620697
@@ -510,7 +517,7 @@ region_enabled = true
 region_rect = Rect2(-34, 1213, 478, 1258)
 
 [node name="moss-bottom3" type="Sprite2D" parent="bottom" unique_id=677099843]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.39607844, 0.13333334, 1)
 z_index = -1
 position = Vector2(1453.9607, 552.02655)
 rotation = 1.5620697
@@ -522,7 +529,7 @@ region_rect = Rect2(-34, 1213, 478, 1258)
 [node name="covering-mid" type="CanvasGroup" parent="." unique_id=119246473]
 
 [node name="mid-part" type="Sprite2D" parent="covering-mid" unique_id=2024057129]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.41960785, 0.105882354, 1)
 z_index = 2
 position = Vector2(647, 260)
 scale = Vector2(0.17195284, 0.14136656)
@@ -531,7 +538,7 @@ region_enabled = true
 region_rect = Rect2(1045, 2014, 1024, 357)
 
 [node name="mid-part2" type="Sprite2D" parent="covering-mid" unique_id=248721534]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.41960785, 0.105882354, 1)
 z_index = 2
 position = Vector2(778.99994, 259)
 scale = Vector2(0.16800773, 0.14136656)
@@ -540,7 +547,7 @@ region_enabled = true
 region_rect = Rect2(1045, 2014, 789, 357)
 
 [node name="mid-part3" type="Sprite2D" parent="covering-mid" unique_id=1505824394]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.41960785, 0.105882354, 1)
 z_index = 2
 position = Vector2(854, 267.00003)
 rotation = 0.7853982
@@ -550,7 +557,7 @@ region_enabled = true
 region_rect = Rect2(1336, 2610, 705, 311)
 
 [node name="mid-part4" type="Sprite2D" parent="covering-mid" unique_id=2047591305]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.41960785, 0.105882354, 1)
 z_index = 1
 position = Vector2(866, 374)
 rotation = 1.5707964
@@ -560,7 +567,7 @@ region_enabled = true
 region_rect = Rect2(1045, 2014, 1024, 357)
 
 [node name="mid-part5" type="Sprite2D" parent="covering-mid" unique_id=1448355208]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.39607844, 0.13333334, 1)
 z_index = 1
 position = Vector2(866, 494.75818)
 rotation = 1.5707964
@@ -572,7 +579,7 @@ region_rect = Rect2(1045, 2014, 481, 357)
 [node name="covering-bottom" type="CanvasGroup" parent="." unique_id=958318072]
 
 [node name="mid-part3" type="Sprite2D" parent="covering-bottom" unique_id=310103783]
-modulate = Color(0.6745098, 0.7176471, 0.44705883, 1)
+modulate = Color(1, 0.5529412, 0.09019608, 1)
 z_index = 1
 position = Vector2(431.99997, 492.99997)
 rotation = 0.7853982
@@ -582,7 +589,7 @@ region_enabled = true
 region_rect = Rect2(1336, 2610, 705, 311)
 
 [node name="moss-bottom" type="Sprite2D" parent="covering-bottom" unique_id=113930238]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.5529412, 0.09019608, 1)
 z_index = 1
 position = Vector2(503.00006, 568.00006)
 rotation = 1.5620697
@@ -592,6 +599,7 @@ region_enabled = true
 region_rect = Rect2(-34, 2309, 478, 455)
 
 [node name="moss-bottom2" type="Sprite2D" parent="covering-bottom" unique_id=672921330]
+modulate = Color(1, 0.43137255, 0.1254902, 1)
 z_index = 1
 position = Vector2(438, 541)
 rotation = 3.1415927
@@ -617,7 +625,7 @@ position = Vector2(23, 343)
 scale = Vector2(0.25695488, 0.22490898)
 
 [node name="MossyBackgroundDecoration" type="Sprite2D" parent="." unique_id=1003463695]
-modulate = Color(0.8745098, 0.91764706, 0.27058825, 1)
+modulate = Color(1, 0.39607844, 0.13333334, 1)
 position = Vector2(1464, 539)
 scale = Vector2(0.055143524, 0.06539184)
 texture = ExtResource("9_08vx1")
@@ -648,7 +656,7 @@ shape = SubResource("RectangleShape2D_7ume6")
 [node name="rightwall" type="StaticBody2D" parent="border" unique_id=196471715]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border/rightwall" unique_id=2066290597]
-position = Vector2(1633, 330)
+position = Vector2(1624, 331)
 shape = SubResource("RectangleShape2D_7ume6")
 
 [node name="top" type="StaticBody2D" parent="border" unique_id=1623293517]

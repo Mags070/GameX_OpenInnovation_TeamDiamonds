@@ -36,6 +36,17 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("11_8rpqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_i0gp7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_ih8y6")
 }, {
 "duration": 1.0,
@@ -150,9 +161,9 @@ script = ExtResource("1_rkhd4")
 position = Vector2(-33.5, 33.5)
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_0dpix")
-animation = &"punch"
-autoplay = "running"
-frame_progress = 0.26872805
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.796506
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1664656017]
 position = Vector2(-33, 34)
