@@ -31,3 +31,6 @@ res://scripts/path2_2.gd
 res://scripts/path3_2.gd
 res://scripts/scene1.gd
 res://scenes/cutscene.tscn
+res://scripts/scene3.gd
+res://scripts/wolf.gd
+res://scripts/map1a.gd

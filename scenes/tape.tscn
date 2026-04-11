@@ -35,14 +35,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqt0m"]
-size = Vector2(10, 6)
+size = Vector2(17.75, 10.75)
 
 [node name="tape" type="StaticBody2D" unique_id=447868832]
 script = ExtResource("1_wc3vj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=22108543]
-position = Vector2(-3.5762787e-07, 0)
-scale = Vector2(0.0038776814, 0.0038776798)
+position = Vector2(0, -2.3841858e-07)
+scale = Vector2(0.008570773, 0.00828325)
 sprite_frames = SubResource("SpriteFrames_nggs5")
 animation = &"animation"
 autoplay = "animation"

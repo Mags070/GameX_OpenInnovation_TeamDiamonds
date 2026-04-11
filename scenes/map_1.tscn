@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dot6ngk1d1bd2" path="res://scenes/tape.tscn" id="16_u5xrg"]
 [ext_resource type="PackedScene" uid="uid://d3jj8cnet2s32" path="res://scenes/inventory_ui.tscn" id="17_aereq"]
 [ext_resource type="Texture2D" uid="uid://itamfpkbhx6s" path="res://assest/cave.png" id="18_7qf8q"]
+[ext_resource type="AudioStream" uid="uid://d1ldv2t4is6gm" path="res://assest/audio track M-1.mp3" id="19_2idvc"]
+[ext_resource type="Script" uid="uid://pw5ry3hwprsw" path="res://scripts/map1a.gd" id="20_1oc3a"]
 [ext_resource type="Texture2D" uid="uid://bbq1bo5qgrfqs" path="res://assest/trees/trees.png" id="50_t3wnm"]
 [ext_resource type="Texture2D" uid="uid://1vea8qwguthp" path="res://assest/backgrounds/bg.png" id="55_45fjt"]
 
@@ -663,6 +665,11 @@ position = Vector2(1524, 553)
 
 [node name="tape" parent="chest2" unique_id=1592227588 instance=ExtResource("16_u5xrg")]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1261348962]
+stream = ExtResource("19_2idvc")
+autoplay = true
+script = ExtResource("20_1oc3a")
 
 [connection signal="body_entered" from="lvl-2" to="character" method="_on_lvl_2_body_entered"]
 [connection signal="body_entered" from="lvl-2" to="lvl-2" method="_on_body_entered"]

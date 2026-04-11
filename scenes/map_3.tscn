@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dx24ole6cr502" path="res://scripts/lvl1_entry.gd" id="10_iqnx3"]
 [ext_resource type="Texture2D" uid="uid://cb4ukqqvtfbl7" path="res://assest/door.png" id="11_xn387"]
 [ext_resource type="PackedScene" uid="uid://bqbxv2xrqqm3t" path="res://scenes/villian.tscn" id="12_an2rc"]
+[ext_resource type="AudioStream" uid="uid://bts8pvvaqn5ja" path="res://assest/map3.mp3" id="13_jl3j3"]
 
 [sub_resource type="Curve2D" id="Curve2D_0e48y"]
 
@@ -191,6 +192,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="villian" parent="." unique_id=359207577 instance=ExtResource("12_an2rc")]
 position = Vector2(1198, 194)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=338086174]
+stream = ExtResource("13_jl3j3")
+autoplay = true
 
 [connection signal="body_entered" from="path-2" to="path-2" method="_on_body_entered"]
 [connection signal="body_exited" from="path-2" to="path-2" method="_on_body_exited"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://paxet4ji6kou"]
 
 [ext_resource type="VideoStream" uid="uid://crftqfifdrs6b" path="res://assest/completed_cutscenes/Cutscene_1.ogv" id="1_edmg7"]
+[ext_resource type="Script" uid="uid://doxdsxya6ouke" path="res://scripts/scene1.gd" id="2_a320b"]
 
 [node name="cutscene" type="Node2D" unique_id=1980924834]
 
@@ -20,3 +21,4 @@ offset_bottom = 952.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("1_edmg7")
+script = ExtResource("2_a320b")

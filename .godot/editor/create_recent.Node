@@ -1,5 +1,6 @@
-Control
+Label
 VideoStreamPlayer
+Control
 Node2D
 Path2D
 PathFollow2D
@@ -12,4 +13,3 @@ CanvasGroup
 AudioListener2D
 Area2D
 CollisionShape2D
-AnimatedSprite2D

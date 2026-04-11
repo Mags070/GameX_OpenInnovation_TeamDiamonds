@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cnn7r56cfj8vo" path="res://scenes/character.tscn" id="10_0a3ge"]
 [ext_resource type="PackedScene" uid="uid://isbgktve4vui" path="res://scenes/killzone.tscn" id="11_v41ee"]
 [ext_resource type="Script" uid="uid://n5ypgg0uxby5" path="res://scripts/lvl_3_entry.gd" id="12_tltda"]
+[ext_resource type="AudioStream" uid="uid://04dxjuxwechb" path="res://assest/map2.mp3" id="13_p6qw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v41ee"]
 size = Vector2(261, 45)
@@ -169,7 +170,7 @@ limit_bottom = 1000
 [node name="killzone" parent="." unique_id=1107594628 instance=ExtResource("11_v41ee")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1295542862]
-position = Vector2(617.5, 650.5)
+position = Vector2(615, 657)
 shape = SubResource("RectangleShape2D_v41ee")
 
 [node name="killzone2" parent="." unique_id=2082786500 instance=ExtResource("11_v41ee")]
@@ -201,7 +202,7 @@ shape = SubResource("RectangleShape2D_6li7e")
 [node name="rightwall" type="StaticBody2D" parent="border" unique_id=1342275010]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border/rightwall" unique_id=1410143155]
-position = Vector2(2066, 399)
+position = Vector2(2065, 430)
 shape = SubResource("RectangleShape2D_6li7e")
 
 [node name="top" type="StaticBody2D" parent="border" unique_id=1037323616]
@@ -219,11 +220,16 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_6li7e")
 
 [node name="lvl-3" type="Area2D" parent="." unique_id=423105951]
+position = Vector2(-1, -1)
 script = ExtResource("12_tltda")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lvl-3" unique_id=1366711402]
 position = Vector2(2071, -18)
 shape = SubResource("RectangleShape2D_tcq6v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1991201903]
+stream = ExtResource("13_p6qw5")
+autoplay = true
 
 [connection signal="body_entered" from="lvl-3" to="lvl-3" method="_on_body_entered"]
 [connection signal="body_exited" from="lvl-3" to="lvl-3" method="_on_body_exited"]
