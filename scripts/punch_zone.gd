@@ -6,3 +6,5 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "wolf":
 		body.take_damage(1)
+	if body.name=="villian":
+		body.take_damage(1)

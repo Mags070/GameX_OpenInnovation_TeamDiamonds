@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://ddbwo6jfanm0o" path="res://scripts/wolf_boss.gd" id="13_v17nm"]
 [ext_resource type="Script" uid="uid://rabqou43hws4" path="res://scripts/lvl_2_entry.gd" id="14_2kntv"]
 [ext_resource type="PackedScene" uid="uid://cjptjwg1xu6kl" path="res://scenes/chest.tscn" id="15_m3f5x"]
+[ext_resource type="PackedScene" uid="uid://dot6ngk1d1bd2" path="res://scenes/tape.tscn" id="16_u5xrg"]
+[ext_resource type="PackedScene" uid="uid://d3jj8cnet2s32" path="res://scenes/inventory_ui.tscn" id="17_aereq"]
+[ext_resource type="Texture2D" uid="uid://itamfpkbhx6s" path="res://assest/cave.png" id="18_7qf8q"]
 [ext_resource type="Texture2D" uid="uid://bbq1bo5qgrfqs" path="res://assest/trees/trees.png" id="50_t3wnm"]
 [ext_resource type="Texture2D" uid="uid://1vea8qwguthp" path="res://assest/backgrounds/bg.png" id="55_45fjt"]
 
@@ -24,7 +27,7 @@ region = Rect2(178, 1, 104, 145)
 size = Vector2(34.5, 638.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3f5x"]
-size = Vector2(110, 140)
+size = Vector2(65, 89)
 
 [node name="map1" type="Node2D" unique_id=436783667]
 
@@ -489,6 +492,24 @@ texture = ExtResource("9_08vx1")
 region_enabled = true
 region_rect = Rect2(-34, 1213, 478, 1258)
 
+[node name="moss-bottom4" type="Sprite2D" parent="bottom" unique_id=341861917]
+z_index = 1
+position = Vector2(1030, 592.99994)
+rotation = 1.5620697
+scale = Vector2(0.1633858, 0.2080491)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(-34, 2309, 478, 455)
+
+[node name="moss-bottom5" type="Sprite2D" parent="bottom" unique_id=642645607]
+z_index = 1
+position = Vector2(1122.717, 583.90656)
+rotation = 1.5620697
+scale = Vector2(0.1633858, 0.31470206)
+texture = ExtResource("9_08vx1")
+region_enabled = true
+region_rect = Rect2(-34, 2309, 478, 298)
+
 [node name="covering-mid" type="CanvasGroup" parent="." unique_id=119246473]
 
 [node name="mid-part" type="Sprite2D" parent="covering-mid" unique_id=2024057129]
@@ -587,7 +608,7 @@ z_index = 1
 position = Vector2(376, 275)
 
 [node name="wolf5" parent="wolves" unique_id=1435196472 instance=ExtResource("12_08vx1")]
-position = Vector2(1399, 527)
+position = Vector2(1290, 527)
 script = ExtResource("13_v17nm")
 
 [node name="wolf6" parent="wolves" unique_id=1210094263 instance=ExtResource("12_08vx1")]
@@ -618,11 +639,30 @@ shape = SubResource("RectangleShape2D_v17nm")
 script = ExtResource("14_2kntv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lvl-2" unique_id=1681424523]
-position = Vector2(1638, 491)
+position = Vector2(1613, 514)
 shape = SubResource("RectangleShape2D_m3f5x")
 
 [node name="chest" parent="." unique_id=956531542 instance=ExtResource("15_m3f5x")]
 position = Vector2(58, 548)
+
+[node name="tape" parent="chest" unique_id=447868832 instance=ExtResource("16_u5xrg")]
+visible = false
+
+[node name="InventoryUI" parent="." unique_id=1700354259 instance=ExtResource("17_aereq")]
+
+[node name="tape" parent="." unique_id=317631731 instance=ExtResource("16_u5xrg")]
+position = Vector2(211, 280)
+
+[node name="Cave" type="Sprite2D" parent="." unique_id=813157230]
+position = Vector2(1609, 512)
+scale = Vector2(0.244, 0.244)
+texture = ExtResource("18_7qf8q")
+
+[node name="chest2" parent="." unique_id=1857639133 instance=ExtResource("15_m3f5x")]
+position = Vector2(1524, 553)
+
+[node name="tape" parent="chest2" unique_id=1592227588 instance=ExtResource("16_u5xrg")]
+visible = false
 
 [connection signal="body_entered" from="lvl-2" to="character" method="_on_lvl_2_body_entered"]
 [connection signal="body_entered" from="lvl-2" to="lvl-2" method="_on_body_entered"]

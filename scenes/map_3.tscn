@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cnn7r56cfj8vo" path="res://scenes/character.tscn" id="8_0a7yh"]
 [ext_resource type="Script" uid="uid://bgvna74pfse10" path="res://scripts/path_2_1.gd" id="9_fwffn"]
 [ext_resource type="Script" uid="uid://dx24ole6cr502" path="res://scripts/lvl1_entry.gd" id="10_iqnx3"]
+[ext_resource type="Texture2D" uid="uid://cb4ukqqvtfbl7" path="res://assest/door.png" id="11_xn387"]
+[ext_resource type="PackedScene" uid="uid://bqbxv2xrqqm3t" path="res://scenes/villian.tscn" id="12_an2rc"]
 
 [sub_resource type="Curve2D" id="Curve2D_0e48y"]
 
@@ -20,14 +22,14 @@ size = Vector2(33.25003, 2084.625)
 size = Vector2(110, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwffn"]
-size = Vector2(23.25, 61.5)
+size = Vector2(48, 61.5)
 
 [node name="map-3" type="Node2D" unique_id=1540669857]
 position = Vector2(0, -1)
 
 [node name="character" parent="." unique_id=1595101570 instance=ExtResource("8_0a7yh")]
 z_index = 2
-position = Vector2(69, 354)
+position = Vector2(1021, 200)
 
 [node name="Camera2D" type="Camera2D" parent="character" unique_id=282569108]
 position = Vector2(-23, 0)
@@ -154,7 +156,7 @@ scale = Vector2(0.09081539, 0.06681287)
 texture = ExtResource("7_0jfrf")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="crane" unique_id=1478200429]
-polygon = PackedVector2Array(733, 280, 764, 257, 899, 257, 1044, 257, 1063, 257, 1223, 257, 1225, 253, 1232, 252, 1236, 255, 1238, 258, 1245, 258, 1275, 278, 945, 279, 956, 304, 955, 315, 905, 316, 903, 278, 847, 283, 844, 287, 773, 284, 758, 285)
+polygon = PackedVector2Array(733, 280, 764, 257, 899, 257, 1044, 257, 1063, 257, 1223, 257, 1226, 257, 1233, 257, 1235, 257, 1238, 258, 1245, 258, 1275, 278, 945, 279, 956, 304, 955, 315, 905, 316, 903, 278, 847, 283, 844, 287, 773, 284, 758, 285)
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=563230709]
 color = Color(0.54901963, 0.28627452, 0.40784314, 1)
@@ -171,8 +173,24 @@ shape = SubResource("RectangleShape2D_iqnx3")
 script = ExtResource("10_iqnx3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="path-3" unique_id=1399334416]
-position = Vector2(1242, 388)
+position = Vector2(1198, 380)
 shape = SubResource("RectangleShape2D_fwffn")
+
+[node name="Door" type="Sprite2D" parent="." unique_id=2003897395]
+z_index = 1
+position = Vector2(1199, 377.00003)
+scale = Vector2(0.32666665, 0.32666665)
+texture = ExtResource("11_xn387")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1846892434]
+offset_left = 1167.0
+offset_top = 343.0
+offset_right = 1224.0
+offset_bottom = 410.0
+color = Color(0, 0, 0, 1)
+
+[node name="villian" parent="." unique_id=359207577 instance=ExtResource("12_an2rc")]
+position = Vector2(1198, 194)
 
 [connection signal="body_entered" from="path-2" to="path-2" method="_on_body_entered"]
 [connection signal="body_exited" from="path-2" to="path-2" method="_on_body_exited"]

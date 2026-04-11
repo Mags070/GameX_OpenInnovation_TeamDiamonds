@@ -166,5 +166,14 @@ script = ExtResource("31_i0gp7")
 position = Vector2(-7.6875, 23.3125)
 shape = SubResource("RectangleShape2D_8rpqn")
 
+[node name="punch_zone2" type="Area2D" parent="." unique_id=310164186]
+visibility_layer = 2
+script = ExtResource("31_i0gp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="punch_zone2" unique_id=1467152582]
+light_mask = 3
+position = Vector2(-59, 23)
+shape = SubResource("RectangleShape2D_8rpqn")
+
 [connection signal="body_entered" from="punch_zone" to="." method="_on_punch_zone_body_entered"]
 [connection signal="body_exited" from="punch_zone" to="." method="_on_punch_zone_body_exited"]

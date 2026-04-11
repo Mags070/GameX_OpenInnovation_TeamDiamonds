@@ -1,19 +1,21 @@
 extends CharacterBody2D
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
 var is_punching = false
 var health = 5
 var can_take_damage = true
 var damage_cooldown = 1.0
-
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var punch_zone: Area2D = $punch_zone
+@onready var punch_zone_2: Area2D = $punch_zone2
 
 func _ready() -> void:
 	punch_zone.monitoring = false
+	punch_zone_2.monitoring = false
 	punch_zone.area_entered.connect(_on_punch_zone_area_entered)
+	punch_zone_2.area_entered.connect(_on_punch_zone_area_entered)
+	if Inventory.has_item("tape"):
+		print("Player has tape!")
 
 func take_damage(amount: int) -> void:
 	if not can_take_damage:
@@ -65,7 +67,6 @@ func _physics_process(delta: float) -> void:
 
 	# Auto stop when animation ends
 	if is_punching and not animated_sprite.is_playing():
-		# Restart punch animation if still holding
 		if Input.is_action_pressed("punch") and is_on_floor():
 			animated_sprite.play("punch")
 		else:
@@ -84,14 +85,16 @@ func _physics_process(delta: float) -> void:
 	if direction > 0:
 		animated_sprite.flip_h = false
 		punch_zone.position.x = abs(punch_zone.position.x)
+		punch_zone_2.position.x = abs(punch_zone_2.position.x)
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		punch_zone.position.x = -abs(punch_zone.position.x)
+		punch_zone_2.position.x = -abs(punch_zone_2.position.x)
 
 	if not is_punching:
 		if is_on_floor():
 			if direction == 0:
-				animated_sprite.play("idle")
+				animated_sprite.play("running")
 			else:
 				animated_sprite.play("running")
 		else:
@@ -102,9 +105,11 @@ func _physics_process(delta: float) -> void:
 func _start_punch() -> void:
 	is_punching = true
 	punch_zone.monitoring = true
+	punch_zone_2.monitoring = true
 	animated_sprite.play("punch")
 
 func _stop_punch() -> void:
 	is_punching = false
 	punch_zone.monitoring = false
+	punch_zone_2.monitoring = false
 	animated_sprite.stop()
